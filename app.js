@@ -19,10 +19,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
 app.use(express.static('uploads'));
 
-//start app 
-const port = process.env.PORT || 80;
+//start app
+const port = process.env.PORT || 3000;
 
-app.listen(port, () => 
+app.listen(port, () =>
   console.log(`App is listening on port ${port}.`)
 );
 
@@ -36,7 +36,7 @@ app.post('/upload-file', async (req, res) => {
         } else {
             //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
             let newFile = req.files.newFile;
-            
+
             //Use the mv() method to place the file in upload directory (i.e. "uploads")
             newFile.mv('./uploads/' + newFile.name);
 
