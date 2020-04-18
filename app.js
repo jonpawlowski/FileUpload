@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const _ = require('lodash');
+const path = require('path');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
 app.use(express.static('uploads'));
+app.use(express.static(path.join(__dirname, '/')));
 
 //start app
 const port = process.env.PORT || 3000;
@@ -25,6 +27,10 @@ const port = process.env.PORT || 3000;
 app.listen(port, () =>
   console.log(`App is listening on port ${port}.`)
 );
+
+app.get('/', function (req, res) {
+  res.sendfile('index.html');
+});
 
 app.post('/upload-file', async (req, res) => {
     try {
