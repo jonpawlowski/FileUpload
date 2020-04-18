@@ -22,7 +22,8 @@ app.use(express.static('uploads'));
 app.use(express.static(path.join(__dirname, '/')));
 
 //start app
-const port = process.env.PORT || 3000;
+const config = require('./config/config.js');
+const port = process.env.PORT || global.gConfig.node_port;
 
 app.listen(port, () =>
   console.log(`App is listening on port ${port}.`)
