@@ -33,6 +33,7 @@ app.get('/', function (req, res) {
   res.sendfile('index.html');
 });
 
+console.log("Upload URL is " + global.gConfig.uploadUrl);
 app.post('/upload-file', async (req, res) => {
     try {
         if(!req.files) {
@@ -61,4 +62,8 @@ app.post('/upload-file', async (req, res) => {
     } catch (err) {
         res.status(500).send(err);
     }
-});
+  });
+
+  app.get('/download-file', async (req, res) => {
+    res.download('./uploads/ovftool_commands.txt');
+  });

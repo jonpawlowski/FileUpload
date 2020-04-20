@@ -20,3 +20,6 @@ uploads
 
 # Config Files
 config
+
+# Backup Files
+backups
