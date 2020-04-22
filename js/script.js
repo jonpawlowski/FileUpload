@@ -54,7 +54,6 @@ function fileSelected() {
     // prepare HTML5 FileReader
     var oReader = new FileReader();
       oReader.onload = function(e){
-        console.log("**************")
       // e.target.result contains the DataURL which we will use as a source of the image
       //oImage.src = e.target.result;
 

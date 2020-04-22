@@ -48,6 +48,23 @@
 
                 <img id="preview" />
             </div>
+
+            <div class="contr"><h2>Select a file below to download</h2></div>
+
+            <div class="upload_form_cont">
+
+              <div>
+                <div><label for="file">Please select below to download</label></div>
+                <ul>
+                  <% fileArray.forEach(function(file) { %>
+                      <li><a href= "/download-file?file=<%=file%>"><%=file%></a></li>
+                  <% }); %>
+                </ul>
+              </div>
+              <div>
+
+              </div>
+            </div>
         </div>
     </body>
 </html>

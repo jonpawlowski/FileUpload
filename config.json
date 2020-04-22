@@ -1,0 +1,20 @@
+{
+    "development": {
+        "config_id": "development",
+        "node_https_port": 443,
+        "database": "financeApp",
+        "collection": "charges",
+        "recurring_collection": "recurringCharges",
+        "databaseurl": "mongodb://localhost:27017",
+        "budget": 2000
+    },
+    "production": {
+        "config_id": "production",
+        "node_port": 80,
+        "database": "financeApp",
+        "collection": "charges",
+        "recurring_collection": "recurringCharges",
+        "databaseurl": "mongodb://jplab-mongo01.jplab.com:27017",
+        "budget": 2000
+    }
+}
